@@ -1,4 +1,3 @@
-[![Ceasefire Now](https://badge.techforpalestine.org/default)](https://techforpalestine.org/learn-more)
 
 # PHP client for WeatherAPI.com
 
@@ -59,14 +58,14 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "require": {
     "weatherapicom/php": "dev-main"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true
 }
 ```
 
 Then run:
 ```
-composer update weatherapicom/php
+composer install
 ```
 
 ### Manual Installation
