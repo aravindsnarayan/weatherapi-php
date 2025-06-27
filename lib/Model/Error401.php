@@ -2,7 +2,7 @@
 /**
  * Error401
  *
- * PHP version 5
+ * PHP version 8.3
  *
  * @category Class
  * @package  Swagger\Client
