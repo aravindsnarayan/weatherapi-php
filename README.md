@@ -2,8 +2,8 @@
 
 # PHP client for WeatherAPI.com
 
-# Introduction
-WeatherAPI.com provides access to weather and geo data via a JSON/XML restful API. It allows developers to create desktop, web and mobile applications using this data very easy. 
+## Introduction
+WeatherAPI.com provides access to weather and geo data via a JSON/XML restful API. It allows developers to create desktop, web, and mobile applications using this data easily.
 
 We provide following data through our API:     
 - Real-time weather
@@ -40,8 +40,8 @@ Authentication to the WeatherAPI.com API is provided by passing your API key as 
 key=YOUR API KEY
 
 ## Requirements
+- PHP 8.3 or later
 
-PHP 5.5 and later
 
 ## Installation & Usage
 ### Composer
@@ -52,30 +52,31 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 {
   "repositories": [
     {
-      "type": "git",
-      "url": "https://github.com//.git"
+      "type": "vcs",
+      "url": "https://github.com/aravindsnarayan/weatherapi-php.git"
     }
   ],
   "require": {
-    "/": "*@dev"
-  }
+    "weatherapicom/php": "dev-main"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
 ```
 
-Then run `composer install`
+Then run:
+```
+composer update weatherapicom/php
+```
 
 ### Manual Installation
-
 Download the files and include `autoload.php`:
-
 ```php
-    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
+require_once('/path/to/weatherapi-php/vendor/autoload.php');
 ```
 
 ## Tests
-
 To run the unit tests:
-
 ```
 composer install
 ./vendor/bin/phpunit
@@ -83,7 +84,7 @@ composer install
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+After installation, you can use the client as follows:
 
 ```php
 <?php
@@ -100,7 +101,7 @@ $apiInstance = new Swagger\Client\Api\APIsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$q = "q_example"; // string | Pass US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name. Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to learn more.
+$q = "q_example"; // string | Pass US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name.
 $dt = new \DateTime("2013-10-20"); // \DateTime | Date on or after 1st Jan, 2015 in yyyy-MM-dd format
 
 try {
@@ -109,7 +110,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling APIsApi->astronomy: ', $e->getMessage(), PHP_EOL;
 }
-
 ?>
 ```
 
@@ -129,44 +129,39 @@ Class | Method | HTTP request | Description
 *APIsApi* | [**searchAutocompleteWeather**](docs/Api/APIsApi.md#searchautocompleteweather) | **GET** /search.json | Search/Autocomplete API
 *APIsApi* | [**timeZone**](docs/Api/APIsApi.md#timezone) | **GET** /timezone.json | Time Zone API
 
-
 ## Documentation For Models
 
- - [Alerts](docs/Model/Alerts.md)
- - [AlertsAlert](docs/Model/AlertsAlert.md)
- - [ArrayOfSearch](docs/Model/ArrayOfSearch.md)
- - [Astronomy](docs/Model/Astronomy.md)
- - [AstronomyAstro](docs/Model/AstronomyAstro.md)
- - [Current](docs/Model/Current.md)
- - [CurrentAirQuality](docs/Model/CurrentAirQuality.md)
- - [CurrentCondition](docs/Model/CurrentCondition.md)
- - [Error400](docs/Model/Error400.md)
- - [Error401](docs/Model/Error401.md)
- - [Error403](docs/Model/Error403.md)
- - [Forecast](docs/Model/Forecast.md)
- - [ForecastAstro](docs/Model/ForecastAstro.md)
- - [ForecastCondition](docs/Model/ForecastCondition.md)
- - [ForecastDay](docs/Model/ForecastDay.md)
- - [ForecastDayCondition](docs/Model/ForecastDayCondition.md)
- - [ForecastForecastday](docs/Model/ForecastForecastday.md)
- - [ForecastHour](docs/Model/ForecastHour.md)
- - [Ip](docs/Model/Ip.md)
- - [Location](docs/Model/Location.md)
- - [Marine](docs/Model/Marine.md)
- - [MarineForecastday](docs/Model/MarineForecastday.md)
- - [MarineHour](docs/Model/MarineHour.md)
- - [Search](docs/Model/Search.md)
+- [Alerts](docs/Model/Alerts.md)
+- [AlertsAlert](docs/Model/AlertsAlert.md)
+- [ArrayOfSearch](docs/Model/ArrayOfSearch.md)
+- [Astronomy](docs/Model/Astronomy.md)
+- [AstronomyAstro](docs/Model/AstronomyAstro.md)
+- [Current](docs/Model/Current.md)
+- [CurrentAirQuality](docs/Model/CurrentAirQuality.md)
+- [CurrentCondition](docs/Model/CurrentCondition.md)
+- [Error400](docs/Model/Error400.md)
+- [Error401](docs/Model/Error401.md)
+- [Error403](docs/Model/Error403.md)
+- [Forecast](docs/Model/Forecast.md)
+- [ForecastAstro](docs/Model/ForecastAstro.md)
+- [ForecastCondition](docs/Model/ForecastCondition.md)
+- [ForecastDay](docs/Model/ForecastDay.md)
+- [ForecastDayCondition](docs/Model/ForecastDayCondition.md)
+- [ForecastForecastday](docs/Model/ForecastForecastday.md)
+- [ForecastHour](docs/Model/ForecastHour.md)
+- [Ip](docs/Model/Ip.md)
+- [Location](docs/Model/Location.md)
+- [Marine](docs/Model/Marine.md)
+- [MarineForecastday](docs/Model/MarineForecastday.md)
+- [MarineHour](docs/Model/MarineHour.md)
+- [Search](docs/Model/Search.md)
 
+## Authorization
 
-## Documentation For Authorization
-
-
-## ApiKeyAuth
-
+### ApiKeyAuth
 - **Type**: API key
 - **API key parameter name**: key
 - **Location**: URL query string
-
 
 ## Author
 
